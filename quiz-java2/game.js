@@ -73,6 +73,15 @@ function deselectAnswers() {
 
 function getSelected() {
   let answerEls;
+  answerEls.forEach((answersEls) => {
+    if (answerEls.checked) {
+      answer = answersEls.id;
+    }
+  });
+  return answer;
+}
+function getSelected() {
+  let answerEls;
   answerEls.forEach((answerEls) => {
     if (answerEls.checked) {
       answer = answerEls.id;
@@ -80,7 +89,6 @@ function getSelected() {
   });
   return answer;
 }
-
 submitBtn.addEventListener("click", () => {
   const answer = getSelected();
   if (answer) {
